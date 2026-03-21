@@ -52,8 +52,7 @@
     border: none;
 }
 #clear{
-   grid-row: span 1;
-   grid-column: span 3;
+   grid-column: span 4;
 }
 
 .btn-container .calc-btn:hover{
@@ -82,4 +81,8 @@
     100%{
         opacity: 0;
     }
+}
+
+#ecran{
+    position: absolute;
 }
