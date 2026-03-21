@@ -29,10 +29,11 @@ btnResult.addEventListener("click", function(){
 function finalResult(){
     console.log("Expression: " + ecran.textContent);
    try {
-        let verif =  ecran.textContent.replace(/%/g, "/").replace(/X/g, "*");
+        let verif =  ecran.textContent.replace(/%/g, "/").replace(/×/g, "*");
         console.log(verif);
-        ecran.textContent = eval(verif);
+        let result = eval(verif);
+        ecran.textContent = Number.isInteger(result) ? result : parseFloat(result.toFixed(2));
     } catch(e) {
-        ecran.textContent = "There is an error in your formula"; // ✅ gère les expressions invalides
+        ecran.textContent = "An error occur"; // ✅ gère les expressions invalides
     }
 }

@@ -9,24 +9,25 @@
 #calculator{
    width: 500px;
     margin: 20px auto;
-    background-color: rgb(227, 224, 224);
+    background-color: rgba(200, 197, 197, 0.711);
     padding: 20px;
-    height: 600px;
-    display: flex;              /* ← ajouter */
+    display: flex;              
     flex-direction: column; 
+    border-radius: 10px;
 }
 
 #calculator .screen{
     height:100px;
     width: 100%;
     position: relative;
-    background-color: whitesmoke;
+    background-color: rgb(255, 250, 250);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-size: 4rem;
+    font-size: 3.3rem;
     font-weight: bold;
+    border-radius: 5px;
     
 }
 
@@ -48,11 +49,19 @@
     align-items: center;
     transition: background-color 1s ease;
     cursor: pointer;
-    box-shadow: 1px 2px black;
+    box-shadow: 4px 4px black;
     border: none;
+    border-radius: 5px;
 }
 #clear{
-   grid-column: span 4;
+   grid-column: span 3;
+   background-color: rgb(255, 0, 0);
+   font-weight: bold;
+}
+
+#finalResult{
+    grid-row: span 2;
+    background-color: rgb(21, 186, 21);
 }
 
 .btn-container .calc-btn:hover{
@@ -86,3 +95,28 @@
 #ecran{
     position: absolute;
 }
+
+@media (max-width: 480px) {
+   #calculator{
+    width: 250px;
+    overflow: hidden;
+    padding: 15px;
+   } 
+   #calculator .screen{
+    height: 70px;
+    font-size: 1.8rem;
+    }
+
+   .btn-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+    }
+    .btn-container .calc-btn{
+    font-size: 1.8rem;
+    }
+    .screen::after{
+    width: 4px;
+}
+
+}   
