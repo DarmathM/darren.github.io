@@ -5,10 +5,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #calculator{
-   width: 500px;
-    margin: 20px auto;
+    width: 500px;
     background-color: rgba(200, 197, 197, 0.711);
     padding: 20px;
     display: flex;              
@@ -55,13 +60,16 @@
 }
 #clear{
    grid-column: span 3;
-   background-color: rgb(255, 0, 0);
+   background-color: rgba(255, 0, 0, 0.632);
    font-weight: bold;
 }
 
+#clearCE{
+    background-color: rgb(17, 174, 241);
+}
+
 #finalResult{
-    grid-row: span 2;
-    background-color: rgb(21, 186, 21);
+    background-color: rgba(2, 255, 2, 0.477);
 }
 
 .btn-container .calc-btn:hover{
@@ -83,6 +91,14 @@
     animation: screenAnimation 1s infinite forwards;
 }
 
+.screen.active::before {
+    content: "⚠️";
+    position: absolute;
+    left: 10px;
+    font-size: 25px;
+    animation: screenAnimation2 1s ease;
+}
+
 @keyframes screenAnimation {
     0%{
         opacity: 1;
@@ -92,13 +108,23 @@
     }
 }
 
+@keyframes screenAnimation2 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 #ecran{
     position: absolute;
 }
 
 @media (max-width: 480px) {
    #calculator{
-    width: 250px;
+    margin-top: 30px;
+    width: 310px;
     overflow: hidden;
     padding: 15px;
    } 
@@ -113,7 +139,8 @@
     gap:10px;
     }
     .btn-container .calc-btn{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    box-shadow: 2px 3px black;
     }
     .screen::after{
     width: 4px;
